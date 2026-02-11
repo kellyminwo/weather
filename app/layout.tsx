@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { DM_Sans, Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
+import Providers from "./provider";
+
 import Navbar from "./components/Navbar";
 
 import type { RootLayoutProps } from "@/.next/types";
@@ -26,8 +28,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body
         className={`${bricolageGrotesque.variable} ${dmSans.variable} mx-auto w-full max-w-9/10 antialiased xl:max-w-7xl`}
       >
-        <Navbar />
-        {children}
+        <Providers>
+          <Navbar />
+          {children}
+        </Providers>
       </body>
     </html>
   );
