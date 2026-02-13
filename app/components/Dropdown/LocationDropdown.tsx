@@ -17,7 +17,7 @@ export default function LocationDropdown({
         {isLoading && (
           <p className="px-4 py-4">
             <Image
-              className="mr-4 inline-block"
+              className="mr-4 inline-block motion-safe:animate-spin"
               src="/icon-loading.svg"
               width={20}
               height={20}
