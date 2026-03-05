@@ -3,9 +3,7 @@ import { DM_Sans, Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import Providers from "./provider";
 
-import Navbar from "./components/Navbar";
-
-import type { RootLayoutProps } from "@/.next/types";
+import type { RootLayoutProps } from "@/app/types";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -29,7 +27,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
         className={`${bricolageGrotesque.variable} ${dmSans.variable} mx-auto w-full max-w-9/10 antialiased xl:max-w-7xl`}
       >
         <Providers>
-          <Navbar />
           {children}
         </Providers>
       </body>

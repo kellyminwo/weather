@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { getLocation } from "@/app/lib/location";
-import LocationDropdown from "@/app/components/Dropdown/LocationDropdown";
+import LocationDropdown from "@/app/components/dropdown/LocationDropdown";
 
 export default function Searchbar() {
   const [locationQuery, setLocationQuery] = useState<string | number>("");
@@ -16,6 +16,7 @@ export default function Searchbar() {
     enabled: !!locationQuery,
     staleTime: 1000 * 60 * 5,
   });
+  console.log(data);
 
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -26,6 +27,7 @@ export default function Searchbar() {
     const coordinate = [
       ["la", selected?.latitude],
       ["lo", selected?.longitude],
+      ["name", `${selected?.name}, ${selected?.country}`],
     ];
     const currentParams = new URLSearchParams(searchParams);
 

@@ -1,4 +1,4 @@
-import type { UnitType } from "@/.next/types";
+import type { UnitType } from "@/app/types";
 
 export const unitTypes: UnitType[] = [
   {

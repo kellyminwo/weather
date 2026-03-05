@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import UnitsDropdown from "./Dropdown/UnitsDropdown";
+import UnitsDropdown from "./dropdown/UnitsDropdown";
 
 export default function Navbar() {
   return (
