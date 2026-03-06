@@ -1,6 +1,10 @@
 import { fetchWeatherApi } from "openmeteo";
 
-export async function getForecast(la: number, lo: number, metricSystem: boolean) {
+export async function getForecast(
+  la: number,
+  lo: number,
+  metricSystem: boolean,
+) {
   const params = {
     latitude: la,
     longitude: lo,
@@ -23,9 +27,9 @@ export async function getForecast(la: number, lo: number, metricSystem: boolean)
     timezone: "auto",
     ...(!metricSystem && {
       wind_speed_unit: "mph",
-	    temperature_unit: "fahrenheit",
-	    precipitation_unit: "inch",
-    })
+      temperature_unit: "fahrenheit",
+      precipitation_unit: "inch",
+    }),
   };
 
   try {

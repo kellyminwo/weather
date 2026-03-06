@@ -16,7 +16,6 @@ export default function Searchbar() {
     enabled: !!locationQuery,
     staleTime: 1000 * 60 * 5,
   });
-  console.log(data);
 
   const router = useRouter();
   const searchParams = useSearchParams();

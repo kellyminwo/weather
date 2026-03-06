@@ -2,7 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { getForecast } from "@/app/lib/forecast";
-import { useMetricSystemContext } from "@/app/provider"
+import { useMetricSystemContext } from "@/app/provider";
 
 export function forecastData(la: number, lo: number) {
   const { metricSystem } = useMetricSystemContext();

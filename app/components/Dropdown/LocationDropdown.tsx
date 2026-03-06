@@ -13,7 +13,7 @@ export default function LocationDropdown({
 
   return (
     queryLength && (
-      <div className="absolute mt-4 w-full rounded-lg bg-storm-800 px-2 py-4 text-preset-7 z-10">
+      <div className="absolute z-10 mt-4 w-full rounded-lg bg-storm-800 px-2 py-4 text-preset-7">
         {isLoading && (
           <>
             <Image
@@ -23,9 +23,7 @@ export default function LocationDropdown({
               height={20}
               alt="Loading icon"
             />
-            <p className="inline">
-              Search in progress
-            </p>
+            <p className="inline">Search in progress</p>
           </>
         )}
         {locationData?.results?.map((location: Location, index: number) => (
@@ -37,7 +35,7 @@ export default function LocationDropdown({
               query: {
                 la: location.latitude,
                 lo: location.longitude,
-                name: `${location.name}, ${location.country_code === 'US' ? location.admin1 : location.country}`,
+                name: `${location.name}, ${location.country_code === "US" ? location.admin1 : location.country}`,
               },
             }}
             onNavigate={resetQuery}

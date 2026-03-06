@@ -6,16 +6,18 @@ import { createContext, useContext, useState } from "react";
 
 import type { ProvidersProps, MetricSystemContextType } from "@/app/types";
 
-const MetricSystemContext = createContext<MetricSystemContextType | undefined>(undefined);
+const MetricSystemContext = createContext<MetricSystemContextType | undefined>(
+  undefined,
+);
 
 export const useMetricSystemContext = () => {
-  let context = useContext(MetricSystemContext)
+  let context = useContext(MetricSystemContext);
   if (context === undefined) {
-    throw Error('Must be used within context.')
+    throw Error("Must be used within context.");
   }
 
-  return context
-}
+  return context;
+};
 
 export default function Providers({ children }: ProvidersProps) {
   const [queryClient] = useState(() => new QueryClient());
@@ -27,7 +29,7 @@ export default function Providers({ children }: ProvidersProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <MetricSystemContext value={{metricSystem, switchMetric}}>
+      <MetricSystemContext value={{ metricSystem, switchMetric }}>
         {children}
       </MetricSystemContext>
       <ReactQueryDevtools initialIsOpen={false} />

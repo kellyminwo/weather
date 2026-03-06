@@ -26,9 +26,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body
         className={`${bricolageGrotesque.variable} ${dmSans.variable} mx-auto w-full max-w-9/10 antialiased xl:max-w-7xl`}
       >
-        <Providers>
-          {children}
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

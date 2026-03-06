@@ -3,16 +3,16 @@
 import { useState } from "react";
 import Image from "next/image";
 import { unitTypes } from "./utils/unitTypes";
-import { useMetricSystemContext } from "@/app/provider"
+import { useMetricSystemContext } from "@/app/provider";
 
 import type { UnitType } from "@/app/types";
 
 export default function UnitsDropdown() {
   const [toggle, setToggle] = useState(false);
-  const { metricSystem, switchMetric } = useMetricSystemContext()
+  const { metricSystem, switchMetric } = useMetricSystemContext();
 
   return (
-    <div className="dropdown relative text-preset-7 z-20">
+    <div className="dropdown relative z-20 text-preset-7">
       <button
         type="button"
         className="flex items-center gap-2 rounded-md bg-storm-800 px-4 py-3"
@@ -59,7 +59,9 @@ export default function UnitsDropdown() {
                       />
                     </dd>
                   ) : (
-                    <dd key={unit} className="cursor-not-allowed p-2">{unit}</dd>
+                    <dd key={unit} className="cursor-not-allowed p-2">
+                      {unit}
+                    </dd>
                   ),
                 )}
               </div>

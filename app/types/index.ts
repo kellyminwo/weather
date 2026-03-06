@@ -11,7 +11,7 @@ export type ProvidersProps = {
 export type MetricSystemContextType = {
   metricSystem: boolean;
   switchMetric: () => void;
-}
+};
 
 export type UnitType = {
   type: string;
@@ -36,20 +36,29 @@ export type LocationDropdownProps = {
 };
 
 export type CurrentWeather = {
-    time: Date;
-    temperature_2m: number;
-    apparent_temperature: number;
-    weather_code: number;
-    relative_humidity_2m: number;
-    wind_speed_10m: number;
-    precipitation: number;
-  };
+  time: Date;
+  temperature_2m: number;
+  apparent_temperature: number;
+  weather_code: number;
+  relative_humidity_2m: number;
+  wind_speed_10m: number;
+  precipitation: number;
+};
+
+export type DailyWeather = {
+  time: Date[];
+  sunrise: Date[];
+  sunset: Date[];
+  weather_code: number[];
+  temperature_2m_max: number[];
+  temperature_2m_min: number[];
+};
 
 export type ForecastProps = {
-    la: number;
-    lo: number;
-    locationName: string;
-}
+  la: number;
+  lo: number;
+  locationName: string;
+};
 
 export type CurrentForecastProps = {
   currentWeather: CurrentWeather;
@@ -57,14 +66,12 @@ export type CurrentForecastProps = {
   isLoading: boolean;
 };
 
-export type CurrentForecastTypesProps = {
-  currentWeather: CurrentWeather;
-  isMetric: boolean;
-}
-
 export type CurrentForecastTilesProps = {
+  currentWeather: CurrentWeather;
   isLoading: boolean;
-  type: string;
-  value: number;
-  unit: string;
-}
+};
+
+export type DailyForecastProps = {
+  dailyWeather: DailyWeather;
+  isLoading: boolean;
+};
